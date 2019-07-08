@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>JSON Gen thingy</title>
+        <script src="requests.js"></script>
+        <script src="main.js"></script>
+    </head>
+
+    <body>
+        <textarea name="jsondata" id="jsondata" cols="100" rows="10"></textarea><br>
+        <button onclick="improtfromjson()">import json</button>
+        <button onclick="exporttojson()">export to json</button><br>
+        <select name="page" id="pageselector" size="16" selectedindex="0" onchange="pageselectorchange(this)">
+        </select><br>
+        <button onclick="addpage()">add page</button>
+        <button onclick="removepage()">remove page</button>
+        <br>
+        <table>
+            <tr>
+                <th>Filename: </th>
+                <th><input type="text" name="filename" id="filename"></th>
+            </tr>
+            <tr>
+                <th>Title: </th>
+                <th><input type="text" name="title" id="title"></th>
+            </tr>
+            <tr>
+                <th>Type: </th>
+                <th><select name="type" id="typeselector">
+                        <option value="category">category</option>
+                        <option value="action">action</option>
+                        <option value="advice">advice</option>
+                        <option value="question">question</option>
+                    </select></th>
+            </tr>
+            <tr>
+                <th>Description: </th>
+                <th><textarea name="descp" id="descp" cols="30" rows="10"></textarea></th>
+            </tr>
+            <tr>
+                <th>Info: </th>
+                <th><textarea name="info" id="info" cols="30" rows="10"></textarea></th>
+            </tr>
+            <tr>
+                <th>SubCats: </th>
+                <th>
+                    <select name="subcat" id="subcatselector" size="6" onchange="subcatselectorchange(this)">
+                    </select><br>
+                    <button onclick="addsubcat()">add subcat</button>
+                    <button onclick="removesubcat()">remove subcat</button>
+                    <table>
+                        <tr>
+                            <th>Name: </th>
+                            <th><input type="text" name="name" id="name"></th>
+                        </tr>
+                        <tr>
+                            <th>Link: </th>
+                            <th><input type="text" name="link" id="link"></th>
+                        </tr>
+                    </table>
+                </th>
+            </tr>
+        </table>
+        <script>load()</script>
+    </body>
+
+</html>
